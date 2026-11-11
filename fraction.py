@@ -56,15 +56,22 @@ class Fraction:
                 if(self.den%i==0):
                       l2.append(i)
 
-          for i in range(len(l1)+1):
-                m=max(l1)
-                if m in l2:
-                      break
-                else:
-                      l1.pop()
 
-              
+    #   APPROACH 1 , BY USING POP()
+        #   for i in range(len(l1)+1):
+        #         m=max(l1)
+        #         if m in l2:
+        #               break
+        #         else:
+        #               l1.pop()
 
-          return Fraction((self.num)/m,(self.den)/m)          
-                                             
+        #  APPROACH 2ND BY UPADATING M by the largest number 
+          m = 1
+
+          for i in l1:
+           if i in l2:
+            m = i
+     
+          return Fraction((self.num)//m,(self.den)//m)          
+                                            #  use the floordivision to avoid the decimal point value .
                    
