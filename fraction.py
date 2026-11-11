@@ -43,3 +43,28 @@ class Fraction:
              tempD=self.den * other.num
              
              return Fraction(tempN,tempD)
+
+
+    def simply(self):
+          l1=[]
+          l2=[]
+          for i in range(1,self.num+1):
+                if(self.num%i==0):
+                      l1.append(i)
+
+          for i in range(1,self.den+1):
+                if(self.den%i==0):
+                      l2.append(i)
+
+          for i in range(len(l1)+1):
+                m=max(l1)
+                if m in l2:
+                      break
+                else:
+                      l1.pop()
+
+              
+
+          return Fraction((self.num)/m,(self.den)/m)          
+                                             
+                   
